@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Dr. Angeli - Common Questions</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Container for the FAQ and Ask a Question Section */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* Header */
+        h2 {
+            text-align: center;
+            color: #2a3f5c;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Item Styles */
+        .faq-item {
+            margin: 10px 0;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .faq-header {
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e7eff6;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .faq-header:hover {
+            background-color: #d0e1f9;
+        }
+
+        .faq-content {
+            display: none;
+            padding: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Text Area Styles */
+        .text-area {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 1rem;
+            resize: none;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Styles */
+        .submit-button {
+            background-color: #2a3f5c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: #1d2b3f;
+        }
+
+        /* Confirmation Message */
+        .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ask Dr. Angeli</h2>
+
+    <!-- Common Questions Section -->
+    <div class="faq-section">
+        <h3>Common Questions</h3>
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                What is therapy and how can it help me?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-content">
+                <p>Therapy is a collaborative process that involves talking to a trained professional to explore your feelings, thoughts, and behaviors. It can help you understand yourself better, manage challenges, and develop coping strategies for various life situations.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                How long are therapy sessions?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-content">
+                <p>Therapy sessions typically last between 45 to 60 minutes. The duration can vary based on the type of therapy and your specific needs.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                What are the costs associated with therapy?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-content">
+                <p>Costs for therapy sessions can vary depending on the provider and the type of therapy. It's best to check with your insurance provider for coverage details and to discuss payment options directly with your therapist.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                Is my information kept confidential?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-content">
+                <p>Yes, confidentiality is a fundamental part of the therapeutic process. Your therapist is legally and ethically bound to keep your information private, with certain exceptions for safety and legal obligations.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                What can I expect during the first session?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-content">
+                <p>During your first session, your therapist will likely ask about your reasons for seeking therapy, your background, and any specific concerns you may have. This helps establish a foundation for your work together.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask a Question Section -->
+    <h3>Submit Your Question</h3>
+    <textarea class="text-area" id="questionInput" placeholder="Type your question here..."></textarea>
+    <button class="submit-button" onclick="submitQuestion()">Submit Question</button>
+    <div class="confirmation-message" id="confirmationMessage">
+        Your question has been submitted! Thank you.
+    </div>
+</div>
+
+<script>
+    function toggleFAQ(header) {
+        const faqContent = header.nextElementSibling;
+
+        // Toggle content visibility
+        if (faqContent.style.display === "block") {
+            faqContent.style.display = "none";
+        } else {
+            document.querySelectorAll(".faq-content").forEach(c => c.style.display = "none");
+            faqContent.style.display = "block";
+        }
+    }
+
+    function submitQuestion() {
+        const questionInput = document.getElementById('questionInput');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        if (questionInput.value.trim() !== "") {
+            // Here you would typically handle the submission to the server
+            // For this example, we just show a confirmation message
+            confirmationMessage.style.display = "block";
+            questionInput.value = ""; // Clear the textarea
+        } else {
+            alert("Please enter a question before submitting.");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Tools</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Container for the Wellness Tools Section */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* Header */
+        h2 {
+            text-align: center;
+            color: #2a3f5c;
+            margin-bottom: 20px;
+        }
+
+        /* Article Card Styles */
+        .article-card {
+            background-color: #e7eff6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Article Title */
+        .article-title {
+            font-size: 1.2rem;
+            color: #2a3f5c;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        /* Article Summary */
+        .article-summary {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        /* Article Link */
+        .article-link {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #2a3f5c;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .article-link:hover {
+            background-color: #1d2b3f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Wellness Tools</h2>
+
+    <!-- Article Cards Section -->
+    <div class="article-section">
+        <div class="article-card">
+            <h3 class="article-title" onclick="openArticle('article1')">10 Tips for Managing Anxiety</h3>
+            <p class="article-summary">Discover practical strategies for coping with anxiety in daily life.</p>
+            <a href="#" class="article-link" onclick="openArticle('article1')">Read More</a>
+        </div>
+
+        <div class="article-card">
+            <h3 class="article-title" onclick="openArticle('article2')">The Importance of Self-Care</h3>
+            <p class="article-summary">Learn how self-care can enhance your mental well-being and overall health.</p>
+            <a href="#" class="article-link" onclick="openArticle('article2')">Read More</a>
+        </div>
+
+        <div class="article-card">
+            <h3 class="article-title" onclick="openArticle('article3')">Understanding Depression</h3>
+            <p class="article-summary">A comprehensive guide to understanding the symptoms and treatment of depression.</p>
+            <a href="#" class="article-link" onclick="openArticle('article3')">Read More</a>
+        </div>
+
+        <div class="article-card">
+            <h3 class="article-title" onclick="openArticle('article4')">Mindfulness Techniques for Beginners</h3>
+            <p class="article-summary">Explore mindfulness practices to enhance your emotional health and resilience.</p>
+            <a href="#" class="article-link" onclick="openArticle('article4')">Read More</a>
+        </div>
+
+        <div class="article-card">
+            <h3 class="article-title" onclick="openArticle('article5')">Coping with Stress in Everyday Life</h3>
+            <p class="article-summary">Strategies and tips for effectively managing stress and staying balanced.</p>
+            <a href="#" class="article-link" onclick="openArticle('article5')">Read More</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openArticle(articleId) {
+        // For demonstration, we will simply alert the article ID.
+        // In a real application, you would navigate to a new page or open a modal with the article content.
+        alert("Opening article: " + articleId);
+    }
+</script>
+
+</body>
+</html>

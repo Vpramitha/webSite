@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Practice - Professional Overview</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fb;
+        }
+
+        /* Header and Navbar Styles */
+        header {
+            background-color: #004080;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Primary Navigation */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #00aaff;
+            color: #fff;
+        }
+
+        /* Sub-Navigation for Secondary Links */
+        .sub-nav {
+            margin-top: 10px;
+        }
+
+        .sub-nav a {
+            color: #cce7ff;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .sub-nav a:hover {
+            color: #00aaff;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 150px 20px 20px; /* Adjust padding for fixed header space */
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-top: 40px;
+        }
+
+        .section h1 {
+            text-align: center;
+            color: #004080;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Card Layout */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 10px;
+            flex: 1 1 calc(25% - 20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            color: #004080;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Responsive Styles */
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(48% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="main-nav">
+        <a href="./OurTeam.html">Our Team</a>
+        <a href="./Care.html">Care Options</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <nav class="sub-nav">
+        <a href="#care">Care Options</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-service">Terms of Service</a>
+        <a href="#contact">Contact Information</a>
+        <a href="#accessibility">Accessibility</a>
+    </nav>
+</header>
+
+<div class="main-content">
+    <div class="container">
+
+        <!-- Care Options Section -->
+        <div class="section" id="care">
+            <h1>Care Options</h1>
+            <div class="section-content">
+                <div class="card">
+                    <h3>Individual Therapy</h3>
+                    <p>Personalized, one-on-one sessions designed to provide guidance and support for your unique mental health journey.</p>
+                </div>
+                <div class="card">
+                    <h3>Couples Counseling</h3>
+                    <p>Helping partners build stronger relationships by fostering open communication and understanding.</p>
+                </div>
+                <div class="card">
+                    <h3>Family Therapy</h3>
+                    <p>Open discussions among family members to address communication, conflict, and other issues, fostering unity and resilience.</p>
+                </div>
+                <div class="card">
+                    <h3>Group Therapy</h3>
+                    <p>Community-based environment where individuals can share experiences and coping strategies under professional guidance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Section -->
+        <div class="section" id="privacy-policy">
+            <h1>Privacy Policy</h1>
+            <div class="section-content">
+                <div class="card">
+                    <h3>Confidentiality & Data Security</h3>
+                    <p>Your privacy is our priority. We ensure all personal data is handled with strict confidentiality.</p>
+                </div>
+                <div class="card">
+                    <h3>Data Collection & Usage</h3>
+                    <p>We collect only necessary information to personalize your experience. Your information is never shared without consent.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms of Service Section -->
+        <div class="section" id="terms-of-service">
+            <h1>Terms of Service</h1>
+            <div class="section-content">
+                <div class="card">
+                    <h3>Guidelines for Use</h3>
+                    <p>Our website and services are for informational purposes. Respectful use is expected from all users.</p>
+                </div>
+                <div class="card">
+                    <h3>Changes to Services</h3>
+                    <p>We reserve the right to modify services to adapt to client needs, with notice on significant changes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="section" id="contact">
+            <h1>Contact Information</h1>
+            <div class="section-content">
+                <div class="card">
+                    <h3>Email Support</h3>
+                    <p>Email us at <strong>support@therapypractice.com</strong>. We will respond within 24 hours.</p>
+                </div>
+                <div class="card">
+                    <h3>Phone</h3>
+                    <p>Call us at <strong>(123) 456-7890</strong> during business hours for assistance.</p>
+                </div>
+                <div class="card">
+                    <h3>Office Location</h3>
+                    <p>Visit us at <strong>123 Wellness Ave, Suite 200</strong> for in-person consultations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessibility Section -->
+        <div class="section" id="accessibility">
+            <h1>Accessibility</h1>
+            <div class="section-content">
+                <div class="card">
+                    <h3>Commitment to Accessibility</h3>
+                    <p>Our website meets WCAG 2.1 standards, providing accessible content for all users.</p>
+                </div>
+                <div class="card">
+                    <h3>Additional Accommodations</h3>
+                    <p>Contact us for specific accommodations if needed, so we can best assist you.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

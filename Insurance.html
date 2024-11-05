@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Information</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2a3f5c, #4a90e2);
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            line-height: 1.6;
+            color: #f0f8ff;
+        }
+
+        /* Accordion Container */
+        .accordion-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+
+        /* Accordion Styles */
+        .accordion-item {
+            background-color: #fff;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-left: 5px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header {
+            background: #2a3f5c;
+            color: #fff;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #1d2b3f;
+        }
+
+        .accordion-content {
+            padding: 20px;
+            height: 0;
+            overflow: hidden;
+            color: #333;
+            line-height: 1.6;
+            transition: height 0.3s ease;
+        }
+
+        /* Toggle Icon */
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate icon on active state */
+        .accordion-item.active .toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Active state styling */
+        .accordion-item.active {
+            border-left: 5px solid #4a90e2;
+            background-color: #f1f8fe;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .accordion-header {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-section">
+    <h1 class="hero-title">Health Insurance Overview</h1>
+    <p class="hero-description">Understanding your health insurance options and knowing how to navigate your policy can make a big difference in the quality of care you receive and how much you pay. Explore tips on using your insurance and essential information on policy terms, coverage, and more.</p>
+</div>
+
+<div class="accordion-container">
+    <!-- Using Your Insurance Section -->
+    <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            Using Your Insurance
+            <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+            <p>Understanding how to use your health insurance can help you save money and ensure you receive the best care possible. Here are a few tips:</p>
+            <ul>
+                <li><strong>Know Your Coverage:</strong> Understand what is covered and what is not. Check your plan details and policy documents.</li>
+                <li><strong>Choose In-Network Providers:</strong> Visit doctors and hospitals within your insurer’s network to avoid higher costs.</li>
+                <li><strong>Use Preventive Services:</strong> Many health plans cover preventive services like vaccinations and screenings at no additional cost.</li>
+                <li><strong>Get Pre-Approval When Necessary:</strong> Some treatments require prior approval from your insurance provider. Be sure to check with them in advance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Health Insurance Information Section -->
+    <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            Health Insurance Information
+            <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+            <p>Health insurance helps cover the cost of medical services. Here’s what you should know:</p>
+            <ul>
+                <li><strong>Premiums:</strong> This is the amount you pay monthly or annually for your insurance policy.</li>
+                <li><strong>Deductibles:</strong> The amount you must pay out of pocket before your insurance begins to cover certain services.</li>
+                <li><strong>Copayments & Coinsurance:</strong> Your share of costs after your deductible is met, often represented as a percentage.</li>
+                <li><strong>Out-of-Pocket Maximum:</strong> The maximum amount you pay per year for covered services. After reaching this limit, insurance covers 100% of costs for covered services.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAccordion(header) {
+        const accordionItem = header.parentElement;
+        const content = header.nextElementSibling;
+
+        // Check if this accordion is already active
+        if (accordionItem.classList.contains("active")) {
+            content.style.height = 0;
+            accordionItem.classList.remove("active");
+        } else {
+            // Collapse all accordion items first
+            document.querySelectorAll(".accordion-content").forEach(c => c.style.height = 0);
+            document.querySelectorAll(".accordion-item").forEach(i => i.classList.remove("active"));
+
+            // Expand the current accordion item
+            accordionItem.classList.add("active");
+            content.style.height = content.scrollHeight + "px";
+        }
+    }
+
+    // Ensure the correct height is set on page load for any active item
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".accordion-item.active .accordion-content").forEach(content => {
+            content.style.height = content.scrollHeight + "px";
+        });
+    });
+</script>
+
+</body>
+</html>

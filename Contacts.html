@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Session</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Container for the Schedule a Session Section */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* Header */
+        h2 {
+            text-align: center;
+            color: #2a3f5c;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Form Styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        /* Submit Button Styles */
+        .submit-button {
+            width: 100%;
+            background-color: #2a3f5c;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #1d2b3f;
+        }
+
+        /* Additional Info */
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #2a3f5c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .booking-link {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color: #2a3f5c;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .booking-link:hover {
+            background-color: #1d2b3f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Schedule a Session</h2>
+
+    <!-- Contact Form -->
+    <form id="sessionForm">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Your Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message / Inquiry</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+    </form>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>Or book your appointment online:</p>
+        <a href="#" class="booking-link" onclick="bookAppointment()">Book Online</a>
+    </div>
+</div>
+
+<script>
+    // Function to handle form submission
+    document.getElementById('sessionForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Here you would typically send the form data to your server
+        alert('Your message has been sent! We will get back to you soon.');
+        this.reset(); // Reset the form
+    });
+
+    // Function to handle online booking
+    function bookAppointment() {
+        alert('Redirecting to online booking page...');
+        // Redirect to your booking page here
+        // window.location.href = 'booking-page-url';
+    }
+</script>
+
+</body>
+</html>

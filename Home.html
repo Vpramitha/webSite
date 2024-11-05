@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapy Practice | Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #E0F7FA;
+      background-image: url('therapy.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    header {
+      background-color: #4A90E2;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    nav {
+      background-color: #0071bc;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    .nav-links a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: #fff;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px;
+      transition: 0.4s;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+      max-height: 400px;
+      overflow: hidden;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      color: white;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+      color: white;
+    }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      gap: 20px;
+    }
+    .section {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .section h3 {
+      color: #4A90E2;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      body {
+        background-image: none;
+      }
+      .hero {
+        max-height: 200px;
+        padding: 20px;
+        background-image: url('therapy.jpg');
+      }
+      .hero h2 {
+        font-size: 1.5em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      /* Hide desktop menu and show hamburger icon */
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #0071bc;
+        position: absolute;
+        width: 100%;
+        top: 60px; /* Adjust as needed */
+        left: 0;
+        padding: 20px 0;
+      }
+      .nav-links a {
+        padding: 10px 0;
+        font-size: 1.2em;
+      }
+      .hamburger {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+      }
+      .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      .hamburger.active .line2 {
+        opacity: 0;
+      }
+      .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Our Therapy Practice</h1>
+</header>
+
+<nav>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="./OurTeam.html">Our Team</a>
+    <a href="./Care.html">Care...</a>
+    <a href="./Insurance.html">Using your insurance</a>
+    <a href="./Ask.html">Ask Dr. Angeli</a>
+    <a href="./WellnessTools.html">Wellness Tools</a>
+    <a href="./Contacts.html">Schedule a Session</a>
+    <a href="./InOtherWords.html">In their own words</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h2></h2>
+  <h2>Your Journey to Healing Begins Here</h2>
+  <p>We provide a safe, supportive environment to help you overcome life’s challenges and achieve personal growth.</p>
+</section>
+
+<div class="content">
+  <section id="services" class="section">
+    <h3>Our Services</h3>
+    <p>Our practice offers a variety of therapeutic services tailored to individual needs, including individual therapy, couples counseling, and family therapy. Our experienced therapists are here to guide you every step of the way.</p>
+  </section>
+
+  <section id="mission" class="section">
+    <h3>Our Mission</h3>
+    <p>Our mission is to provide compassionate and evidence-based mental health care to help individuals and families achieve emotional well-being. We are committed to supporting our clients in every aspect of their mental health journey.</p>
+  </section>
+
+  <section id="approach" class="section">
+    <h3>Our Approach</h3>
+    <p>We take a client-centered approach that focuses on understanding each individual’s unique story. Through empathy, collaboration, and effective therapeutic techniques, we aim to empower our clients to find resilience and hope.</p>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2023 Therapy Practice | Designed with care for your well-being</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.querySelector('.hamburger');
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    hamburger.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
